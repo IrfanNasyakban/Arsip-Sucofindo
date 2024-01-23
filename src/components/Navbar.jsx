@@ -23,7 +23,7 @@ function Navbar() {
         {/* <!-- Collapsible wrapper --> */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* <!-- Navbar brand --> */}
-          <a className="navbar-brand mt-2 mt-lg-0" href="/dashboard">
+          <a className="navbar-brand mt-2 mt-lg-0" href="/">
             <img
               src={LogoSucofindo}
               height="55"

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ListData from './components/listData';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import DetailData from './components/DetailData';
 
 function App() {
 
@@ -14,6 +15,13 @@ function App() {
           <>
             <Navbar/>
             <ListData/>
+            <Footer/>
+          </>
+        )} />
+        <Route path="/:id" element={(
+          <>
+            <Navbar/>
+            <DetailData/>
             <Footer/>
           </>
         )} />
