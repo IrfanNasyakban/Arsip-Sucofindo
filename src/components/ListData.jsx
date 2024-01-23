@@ -1,9 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
 import { useState, useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/list.css";
 import axios from "axios";
+import jwt_decode from "jwt-decode";
 
 function ListData() {
   const [showEdit, setShowEdit] = useState(false);
@@ -21,6 +24,21 @@ function ListData() {
   });
 
   const [editRecordId, setEditRecordId] = useState(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    getDatas();
+    if (editRecordId !== null) {
+      axios
+        .get(`http://localhost:5000/data/${editRecordId}`)
+        .then((response) => {
+          setNewRecord(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching record:", error);
+        });
+    }
+  }, [editRecordId]);
 
   const handleClose = () => {
     setShowEdit(false);
@@ -69,20 +87,6 @@ function ListData() {
       console.error("Error fetching data:", error);
     }
   };
-
-  useEffect(() => {
-    getDatas();
-    if (editRecordId !== null) {
-      axios
-        .get(`http://localhost:5000/data/${editRecordId}`)
-        .then((response) => {
-          setNewRecord(response.data);
-        })
-        .catch((error) => {
-          console.error("Error fetching record:", error);
-        });
-    }
-  }, [editRecordId]);
 
   const handleInputChange = (e) => {
     setNewRecord({
@@ -192,7 +196,7 @@ function ListData() {
                         <td>{data.noHp}</td>
                         <td>
                           <Link
-                            to={`/${data.idData}`}
+                            to={`/data/${data.idData}`}
                             className="btn btn-sm btn-success me-1"
                           >
                             View

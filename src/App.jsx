@@ -5,20 +5,26 @@ import ListData from './components/listData';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import DetailData from './components/DetailData';
+import Login from './components/Login';
 
 function App() {
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={(
+      <Route path="/" element={(
+          <>
+            <Login/>
+          </>
+        )} />
+        <Route path="/data" element={(
           <>
             <Navbar/>
             <ListData/>
             <Footer/>
           </>
         )} />
-        <Route path="/:id" element={(
+        <Route path="/data/:id" element={(
           <>
             <Navbar/>
             <DetailData/>

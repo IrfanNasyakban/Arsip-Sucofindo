@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Button, Modal } from "react-bootstrap";
@@ -90,6 +92,7 @@ function DetailData() {
   };
 
   useEffect(() => {
+    refreshToken();
     getArsip();
     getDataById();
     if (editRecordId !== null) {
