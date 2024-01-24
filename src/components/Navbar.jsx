@@ -37,7 +37,7 @@ function Navbar() {
         {/* <!-- Collapsible wrapper --> */}
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           {/* <!-- Navbar brand --> */}
-          <a className="navbar-brand mt-2 mt-lg-0" href="/">
+          <a className="navbar-brand mt-2 mt-lg-0" href="/data">
             <img
               src={Logo}
               height="55"
