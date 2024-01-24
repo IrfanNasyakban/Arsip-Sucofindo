@@ -43,7 +43,7 @@ const Login = () => {
 
                   <div className="form-outline mb-4">
                     <label className="form-label" htmlFor="typeEmailX-2">
-                      Email
+                      Username
                     </label>
                     <input
                       type="text"

@@ -92,7 +92,6 @@ function DetailData() {
   };
 
   useEffect(() => {
-    refreshToken();
     getArsip();
     getDataById();
     if (editRecordId !== null) {

@@ -6,7 +6,6 @@ import { Link, useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../styles/list.css";
 import axios from "axios";
-import jwt_decode from "jwt-decode";
 
 function ListData() {
   const [showEdit, setShowEdit] = useState(false);
